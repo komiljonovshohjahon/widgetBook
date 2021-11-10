@@ -1,11 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hovering/hovering.dart';
-import 'package:widgetbook_2/base/theme_additional.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_size_style.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
+import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 class DefaultButton extends StatelessWidget {
@@ -276,87 +271,39 @@ class DefaultButton extends StatelessWidget {
 }
 
 @WidgetbookUseCase(name: 'Default Button', type: DefaultButton)
-Widget defaultDefaultButtonStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    padding: EdgeInsets.all(16),
-    child: Column(
-      children: [
-        Row(
-          children: [
-            DefaultButton(
-              onPressed: () {},
-              text: 'Primary Button',
-              sizeOfButton: ButtonSize.S,
-              variant: ButtonVariant.PRIMARY,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            DefaultButton(
-              onPressed: () {},
-              text: 'Primary Button',
-              sizeOfButton: ButtonSize.M,
-              variant: ButtonVariant.PRIMARY,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            DefaultButton(
-              onPressed: () {},
-              text: 'Primary Button',
-              sizeOfButton: ButtonSize.L,
-              variant: ButtonVariant.PRIMARY,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            DefaultButton(
-              onPressed: () {},
-              text: 'Primary Button',
-              sizeOfButton: ButtonSize.XL,
-              variant: ButtonVariant.PRIMARY,
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            DefaultButton(
-              onPressed: () {},
-              text: 'Primary Button',
-              sizeOfButton: ButtonSize.XS,
-              variant: ButtonVariant.PRIMARY,
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        DefaultButton(
-          onPressed: () {},
-          text: 'Secondary Button',
-          variant: ButtonVariant.SECONDARY,
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        DefaultButton(
-          onPressed: () {},
-          text: 'Ghost button',
-          variant: ButtonVariant.GHOST,
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        DefaultButton(
-          onPressed: () {},
-          text: 'Link Button',
-          variant: ButtonVariant.LINK,
-        ),
-      ],
-    ),
+Widget defaultDefaultButtonStory() {
+  return Column(
+    children: [
+      DefaultButton(
+        onPressed: () {},
+        text: 'Primary Button',
+        sizeOfButton: ButtonSize.S,
+        variant: ButtonVariant.PRIMARY,
+      ),
+      const SizedBox(
+        height: 20,
+      ),
+      DefaultButton(
+        onPressed: () {},
+        text: 'Secondary Button',
+        variant: ButtonVariant.SECONDARY,
+      ),
+      const SizedBox(
+        height: 20,
+      ),
+      DefaultButton(
+        onPressed: () {},
+        text: 'Ghost button',
+        variant: ButtonVariant.GHOST,
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      DefaultButton(
+        onPressed: () {},
+        text: 'Link Button',
+        variant: ButtonVariant.LINK,
+      ),
+    ],
   );
 }

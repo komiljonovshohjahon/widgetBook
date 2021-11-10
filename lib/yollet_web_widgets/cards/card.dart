@@ -1,53 +1,19 @@
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook_2/base/theme_additional.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
-import 'package:widgetbook_2/widgets/buttons/default_button.dart';
-import 'package:widgetbook_2/widgets/cards/cards_container.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@WidgetbookUseCase(name: 'Cards Container', type: CardsContainer)
-Widget defaultCardsContainerStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    padding: EdgeInsets.all(16),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        DefaultCard(
-          bodyName: 'DefaultCard',
-          headName: 'DefaultCard',
-          childName: 'DefaultCard',
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        CardsContainer(
-          cardsList: [
-            DefaultCard(
-              bodyName: 'Test1',
-              headName: 'Test1',
-              childName: 'Test1',
-            ),
-            DefaultCard(
-              bodyName: 'Test2',
-              headName: 'Test2',
-              childName: 'Test2',
-            ),
-            DefaultCard(
-              bodyName: 'Test3',
-              headName: 'Test3',
-              childName: 'Test3',
-            ),
-          ],
-        )
-      ],
-    ),
+@WidgetbookUseCase(name: 'Card', type: Card)
+Widget defaultCardStory() {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      DefaultCard(
+        bodyName: 'Card description',
+        headName: 'Card name',
+        childName: '0.1%',
+        onRemove: () {},
+      ),
+    ],
   );
 }
 

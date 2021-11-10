@@ -3,19 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:widgetbook_2/base/theme_color.dart';
 import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+import 'package:widgetbook_2/yollet_web_widgets/buttons/button_variants.dart';
 
-@WidgetbookUseCase(name: 'Default Dropdown', type: DefaultDropdown)
-Widget defaultDefaultDropdownStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    padding: EdgeInsets.all(16),
-    child: Row(
+Widget dropdown() => Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         DefaultDropdown(
@@ -34,9 +24,7 @@ Widget defaultDefaultDropdownStory(BuildContext context) {
           listValues: ['First value', 'Second value', 'Third value'],
         ),
       ],
-    ),
-  );
-}
+    );
 
 class DefaultDropdown extends StatefulWidget {
   String? hintText;
@@ -119,7 +107,6 @@ class _DefaultDropdownState extends State<DefaultDropdown> {
           decoration: BoxDecoration(
               color: ThemeColors.white,
               borderRadius: BorderRadius.circular(6),
-              // boxShadow: ThemeShadows.shadowSm,
               border: Border.all(width: 1, color: ThemeColors.gray200)),
           child: DropdownBelow(
             elevation: 0,

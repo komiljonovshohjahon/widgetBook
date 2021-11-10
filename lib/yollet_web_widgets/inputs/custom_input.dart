@@ -1,79 +1,57 @@
+import 'package:widgetbook_2/yollet_web_widgets/inputs/input_wrapper.dart';
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/inputs/input.dart';
-import 'package:widgetbook_2/widgets/inputs/input_table.dart';
-import 'package:widgetbook_2/widgets/inputs/input_wrapper.dart';
-import 'package:widgetbook_2/widgets/inputs/search_field.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Inputs Widgets', type: InputForm)
-Widget defaultInputFormStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
+Widget defaultInputFormStory() {
+  return Column(
+    children: [
+      InputForm(
+        hint: 'Example of Input Form',
+        suffix: const HeroIcon(HeroIcons.academicCap),
+      ),
+      SearchField(),
+      const SizedBox(
+        height: 40,
+      ),
+      CustomTextFieldWidget(
+        labelText: 'Example',
+      )
+    ],
+  );
+}
+
+Widget defaultInputFormContainerStory() {
   return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
+    color: ThemeColors.gray100,
     padding: EdgeInsets.all(16),
-    child: Column(
-      children: [
-        InputForm(
-          hint: 'Example of Input Form',
-          suffix: const HeroIcon(HeroIcons.academicCap),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        SearchField(),
-        SizedBox(
-          height: 20,
-        ),
+    child: InputTable(
+      listOfInput: [
         InputWrapper(
           input: InputForm(
-            hint: 'Example of Input Wrapper',
+            hint: 'Example',
             suffix: const HeroIcon(HeroIcons.academicCap),
           ),
         ),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          color: ThemeColors.gray100,
-          padding: EdgeInsets.all(16),
-          child: InputTable(
-            listOfInput: [
-              InputWrapper(
-                input: InputForm(
-                  hint: 'Example',
-                  suffix: const HeroIcon(HeroIcons.academicCap),
-                ),
-              ),
-              InputWrapper(
-                input: InputForm(
-                  hint: 'Example',
-                  suffix: const HeroIcon(HeroIcons.academicCap),
-                ),
-              ),
-              InputWrapper(
-                input: InputForm(
-                  hint: 'Example',
-                  suffix: const HeroIcon(HeroIcons.academicCap),
-                ),
-              ),
-              InputWrapper(
-                input: InputForm(
-                  hint: 'Example',
-                  suffix: const HeroIcon(HeroIcons.academicCap),
-                ),
-              ),
-            ],
+        InputWrapper(
+          input: InputForm(
+            hint: 'Example',
+            suffix: const HeroIcon(HeroIcons.academicCap),
           ),
         ),
-        CustomTextFieldWidget(
-          labelText: 'Example',
-        )
+        InputWrapper(
+          input: InputForm(
+            hint: 'Example',
+            suffix: const HeroIcon(HeroIcons.academicCap),
+          ),
+        ),
+        InputWrapper(
+          input: InputForm(
+            hint: 'Example',
+            suffix: const HeroIcon(HeroIcons.academicCap),
+          ),
+        ),
       ],
     ),
   );

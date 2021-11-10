@@ -1,11 +1,5 @@
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
-import 'package:widgetbook_2/widgets/buttons/default_button.dart';
-import 'package:widgetbook_2/widgets/image_placeholder/image_placeholder.dart';
-import 'package:widgetbook_2/widgets/inputs/search_field.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 class DefaultTopbar extends StatelessWidget {
   String? image;

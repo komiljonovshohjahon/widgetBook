@@ -1,10 +1,8 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/sidebar/sidebar_tab_child.dart';
+
+import '../yollet_web_widget_exporter.dart';
 
 class SidebarTabParent extends StatefulWidget {
   HeroIcons? icon;

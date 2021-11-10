@@ -1,38 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
+import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Default Tab', type: DefaultTab)
-Widget defaultDefaultTabStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    padding: EdgeInsets.all(16),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        DefaultTab(
-          text: 'Test Tab',
-          sizeOfTab: ButtonSize.M,
-          icon: HeroIcons.academicCap,
-        ),
-        SizedBox(
-          height: 50,
-        ),
-        DefaultTab(
-          text: 'Test Tab',
-          isActive: true,
-          sizeOfTab: ButtonSize.M,
-          icon: HeroIcons.academicCap,
-        ),
-      ],
-    ),
+Widget defaultDefaultTabStory() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      DefaultTab(
+        text: 'Test Tab',
+        sizeOfTab: ButtonSize.M,
+        icon: HeroIcons.academicCap,
+      ),
+      SizedBox(
+        height: 50,
+      ),
+      DefaultTab(
+        text: 'Test Tab',
+        isActive: true,
+        sizeOfTab: ButtonSize.M,
+        icon: HeroIcons.academicCap,
+      ),
+    ],
   );
 }
 
@@ -62,7 +52,7 @@ class DefaultTab extends StatelessWidget {
     return InkWell(
       onTap: onTap ?? null,
       child: Container(
-        padding: const EdgeInsets.all(16.0),
+        // padding: const EdgeInsets.all(16.0),
         height: tabHeight,
         width: width,
         decoration: BoxDecoration(

@@ -1,29 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_additional.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/appbar/logo_banner.dart';
-import 'package:widgetbook_2/widgets/banner/info_banner.dart';
-import 'package:widgetbook_2/widgets/sidebar/sidebar_tab_parent.dart';
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'SideBar Vertical', type: SideBarVertical)
-Widget defaultSideBarVerticalStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(width: width / 6, height: height, child: SideBarVertical()),
-      ],
-    ),
-  );
+Widget defaultSideBarVerticalStory() {
+  return SizedBox(width: 300, child: SideBarVertical());
 }
 
 class SideBarVertical extends StatelessWidget {
@@ -33,8 +14,8 @@ class SideBarVertical extends StatelessWidget {
 
   SideBarVertical({
     Key? key,
-    this.mainText = 'good_morning',
-    this.secondaryText = 'username@mail.com',
+    this.mainText = 'Good morning',
+    this.secondaryText = 'example@mail.com',
     this.imageUrl = '',
   }) : super(key: key);
 

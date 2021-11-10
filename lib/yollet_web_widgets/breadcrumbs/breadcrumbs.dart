@@ -5,7 +5,7 @@ import 'package:widgetbook_2/base/theme_text_style.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Breadcrumb', type: Breadcrumb)
-Widget defaultBreadcrumbStory(BuildContext context) {
+Widget defaultBreadcrumbStory() {
   return Breadcrumb(
     routes: ['Home', 'Store List', 'Store Payment Page'],
   );
@@ -24,13 +24,6 @@ class Breadcrumb extends StatelessWidget {
 
   List<Widget> _buildRoutes(BuildContext context) {
     List<Widget> list = [];
-    // list.add(Icon(
-    //   Icons.home,
-    //   color: ThemeColors.coolgray400,
-    // ));
-    // list.add(SizedBox(
-    //   width: 16,
-    // ));
     for (var element in routes) {
       list.add(Text(
           // element,

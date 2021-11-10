@@ -1,9 +1,6 @@
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/buttons/button_variants.dart';
-import 'package:widgetbook_2/widgets/buttons/default_button.dart';
-import 'package:widgetbook_2/widgets/cards/card.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 class CardsContainer extends StatefulWidget {
   List<DefaultCard>? cardsList;
@@ -102,4 +99,29 @@ class _CardsContainerState extends State<CardsContainer> {
     }
     return list;
   }
+}
+
+@WidgetbookUseCase(name: 'Cards Container', type: CardsContainer)
+Widget defaultCardsContainerStory() {
+  return CardsContainer(
+    methodName: "Payment Methods",
+    cardsList: [
+      DefaultCard(
+        bodyName: 'Test 1',
+        headName: 'Test 1',
+        childName: 'Test 1',
+      ),
+      DefaultCard(
+        bodyName: 'Test 2',
+        headName: 'Test 2',
+        childName: 'Test 2',
+        onRemove: () {},
+      ),
+      DefaultCard(
+        bodyName: 'Test 3',
+        headName: 'Test 3',
+        childName: 'Test 3',
+      ),
+    ],
+  );
 }

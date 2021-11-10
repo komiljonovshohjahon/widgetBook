@@ -73,56 +73,48 @@ class StatusBadge extends StatelessWidget {
 }
 
 @WidgetbookUseCase(name: 'Status Badge', type: StatusBadge)
-Widget defaultStatusBadgeStory(BuildContext context) {
-  double width = MediaQuery.of(context).size.width;
-  double height = MediaQuery.of(context).size.height;
-  return Container(
-    width: width,
-    height: height,
-    color: ThemeColors.blue100,
-    padding: EdgeInsets.all(16),
-    child: Column(
-      children: [
-        StatusBadge(
-          text: 'Error',
-          isError: true,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        StatusBadge(
-          text: 'Success',
-          isSuccess: true,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        StatusBadge(
-          text: 'Inactive',
-          isInactive: true,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        StatusBadge(
-          text: 'Processing',
-          isProcessing: true,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        StatusBadge(
-          text: 'Square',
-          isSquare: true,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        StatusBadge(
-          text: 'Warning',
-          isWarning: true,
-        )
-      ],
-    ),
+Widget defaultStatusBadgeStory() {
+  return Column(
+    children: [
+      StatusBadge(
+        text: 'Error',
+        isError: true,
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      StatusBadge(
+        text: 'Success',
+        isSuccess: true,
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      StatusBadge(
+        text: 'Inactive',
+        isInactive: true,
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      StatusBadge(
+        text: 'Processing',
+        isProcessing: true,
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      StatusBadge(
+        text: 'Square',
+        isSquare: true,
+      ),
+      const SizedBox(
+        height: 16,
+      ),
+      StatusBadge(
+        text: 'Warning',
+        isWarning: true,
+      )
+    ],
   );
 }

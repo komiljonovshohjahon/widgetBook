@@ -1,7 +1,5 @@
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/base/theme_text_style.dart';
-import 'package:widgetbook_2/widgets/image_placeholder/image_placeholder.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @WidgetbookUseCase(name: 'Info Banner', type: InfoBanner)
@@ -43,6 +41,7 @@ class InfoBanner extends StatelessWidget {
   Color? lowerTextColor;
   Color? backgroundColor;
   double? height;
+  double? width;
 
   InfoBanner({
     Key? key,
@@ -53,22 +52,25 @@ class InfoBanner extends StatelessWidget {
     this.lowerTextColor = ThemeColors.coolgray900,
     this.backgroundColor = ThemeColors.white,
     this.height = 56,
+    this.width = 220,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: backgroundColor,
       height: height,
+      width: width,
       padding: const EdgeInsets.only(left: 16),
       child: Row(
         children: [
-          if (image != null)
+          if (image == null)
             ImagePlaceholder(
               width: 40,
               height: 40,
               url: image,
             ),
-          if (image != null)
+          if (image == null)
             const SizedBox(
               width: 10,
             ),

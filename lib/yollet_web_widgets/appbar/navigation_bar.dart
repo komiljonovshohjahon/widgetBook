@@ -1,12 +1,9 @@
 import 'dart:developer' as developer;
 
+import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart';
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
-import 'package:widgetbook_2/base/theme_color.dart';
-import 'package:widgetbook_2/widgets/tabs/tab.dart';
-import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-class Navigationbar extends StatelessWidget {
+class Navigationbar extends StatefulWidget {
   int tabsLength;
   int active;
   List<String> names;
@@ -22,18 +19,34 @@ class Navigationbar extends StatelessWidget {
     this.id,
   }) : super(key: key);
 
+  @override
+  State<Navigationbar> createState() => _NavigationbarState();
+}
+
+class _NavigationbarState extends State<Navigationbar> {
   List<DefaultTab> tabList = [];
+  int activeElement = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      activeElement = widget.active;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    int activeElement = active;
     return Container(
       decoration: const BoxDecoration(
         color: ThemeColors.white,
       ),
       height: 52.0,
-      child: Row(
-        children: _builtWidgetsDefaultTab(activeElement),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: _builtWidgetsDefaultTab(activeElement),
+        ),
       ),
     );
   }
@@ -41,21 +54,31 @@ class Navigationbar extends StatelessWidget {
   List<Widget> _builtWidgetsDefaultTab(int activeElement) {
     List<Widget> list = [];
 
-    for (int index = 0; index < tabsLength; index++) {
+    for (int index = 0; index < widget.tabsLength; index++) {
       if (activeElement == index) {
         list.add(DefaultTab(
-          text: names[index],
-          icon: icons[index],
+          text: widget.names[index],
+          icon: widget.icons[index],
           isActive: true,
           onTap: () {
-            developer.log('tap on navigate');
+            setState(() {
+              activeElement = index;
+              print(activeElement);
+              print(index);
+            });
           },
         ));
       } else {
         list.add(DefaultTab(
-          text: names[index],
-          icon: icons[index],
-          onTap: () {},
+          text: widget.names[index],
+          icon: widget.icons[index],
+          onTap: () {
+            setState(() {
+              activeElement = index;
+              print(activeElement);
+              print(index);
+            });
+          },
         ));
       }
     }
