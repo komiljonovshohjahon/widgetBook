@@ -1,6 +1,7 @@
 import 'dart:core';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_2/smart_house_widgets/smarthouse_template/base/template.dart';
+import 'package:widgetbook_2/smart_house_widgets/tab/tab_container.dart';
 import 'package:widgetbook_2/src/by_usecase.dart';
 import 'package:widgetbook_2/src/by_widget.dart';
 import 'package:widgetbook_2/yollet_web_widgets/inputs/custom_input.dart'
@@ -9,53 +10,80 @@ import 'package:widgetbook_2/yollet_web_widgets/yollet_web_widget_exporter.dart'
 
 WidgetbookCategory yolletWebCategory() {
   return WidgetbookCategory(name: 'Yollet Web Admin Dashboard', widgets: [
-    yolletWebWidget(name: 'Breadcrumb', useCases: [
-      yolletWebUsecase(name: 'Breadcrumb', widget: defaultBreadcrumbStory())
-    ]),
-    yolletWebWidget(name: 'Default Button', useCases: [
+    yolletWebWidget(name: 'Breadcrumb YWAD', useCases: [
       yolletWebUsecase(
-          name: 'Default Button', widget: defaultDefaultButtonStory())
+          name: 'Breadcrumb YWAD', widget: defaultBreadcrumbStory())
     ]),
-    yolletWebWidget(name: 'Banner', useCases: [
-      yolletWebUsecase(name: 'Banner', widget: defaultLogoBannerStory()),
-      yolletWebUsecase(name: 'Tab', widget: defaultDefaultTabStory()),
+    yolletWebWidget(name: 'Default Button YWAD', useCases: [
       yolletWebUsecase(
-          name: 'Image placeholder', widget: defaultImagePlaceholderStory()),
+          name: 'Default Button YWAD', widget: defaultDefaultButtonStory())
     ]),
-    yolletWebWidget(name: 'Card', useCases: [
-      yolletWebUsecase(name: 'Card', widget: defaultCardStory()),
+    yolletWebWidget(name: 'Banner YWAD', useCases: [
+      yolletWebUsecase(name: 'Banner YWAD', widget: defaultLogoBannerStory()),
+      yolletWebUsecase(name: 'Tab YWAD', widget: defaultDefaultTabStory()),
       yolletWebUsecase(
-          name: 'Cards Container', widget: defaultCardsContainerStory())
+          name: 'Image placeholder YWAD',
+          widget: defaultImagePlaceholderStory()),
     ]),
-    yolletWebWidget(name: 'Input field', useCases: [
-      yolletWebUsecase(name: 'Input field', widget: defaultInputFormStory()),
+    yolletWebWidget(name: 'Card YWAD', useCases: [
+      yolletWebUsecase(name: 'Card  YWAD', widget: defaultCardStory()),
       yolletWebUsecase(
-          name: 'Input field container',
+          name: 'Cards Container  YWAD', widget: defaultCardsContainerStory())
+    ]),
+    yolletWebWidget(name: 'Input field  YWAD', useCases: [
+      yolletWebUsecase(
+          name: 'Input field YWAD', widget: defaultInputFormStory()),
+      yolletWebUsecase(
+          name: 'Input field container  YWAD',
           widget: inputContainer.defaultInputFormContainerStory())
     ]),
-    yolletWebWidget(name: 'Dropdown', useCases: [
-      yolletWebUsecase(name: 'Dropdown', widget: dropdown()),
+    yolletWebWidget(name: 'Dropdown YWAD', useCases: [
+      yolletWebUsecase(name: 'Dropdown  YWAD', widget: dropdown()),
     ]),
-    yolletWebWidget(name: 'Modal', useCases: [
-      yolletWebUsecase(name: 'Modal', widget: defaultDefaultModalStory())
+    yolletWebWidget(name: 'Modal  YWAD', useCases: [
+      yolletWebUsecase(name: 'Modal YWAD', widget: defaultDefaultModalStory())
     ]),
-    yolletWebWidget(name: 'Sidebar', useCases: [
-      yolletWebUsecase(name: 'Sidebar', widget: defaultSideBarVerticalStory())
-    ]),
-    yolletWebWidget(name: 'Sortable list', useCases: [
+    yolletWebWidget(name: 'Sidebar  YWAD', useCases: [
       yolletWebUsecase(
-          name: 'Sortable list', widget: defaultSortableTableStory())
+          name: 'Sidebar YWAD', widget: defaultSideBarVerticalStory())
     ]),
-    yolletWebWidget(name: 'Status badge', useCases: [
-      yolletWebUsecase(name: 'Status badge', widget: defaultStatusBadgeStory())
+    yolletWebWidget(name: 'Sortable list YWAD', useCases: [
+      yolletWebUsecase(
+          name: 'Sortable list YWAD', widget: defaultSortableTableStory())
+    ]),
+    yolletWebWidget(name: 'Status badge YWAD', useCases: [
+      yolletWebUsecase(
+          name: 'Status badge YWAD', widget: defaultStatusBadgeStory())
     ]),
   ]);
 }
 
 WidgetbookCategory smartHouseCategory() {
   return WidgetbookCategory(name: 'Smart House Category', widgets: [
-    yolletWebWidget(name: 'Button', useCases: [
-      yolletWebUsecase(name: 'Button', widget: smartHouseButtonStory())
+    yolletWebWidget(name: 'Button SM', useCases: [
+      yolletWebUsecase(name: 'Button SM', widget: smartHouseButtonStory())
     ]),
+    yolletWebWidget(name: 'Alert SM', useCases: [
+      yolletWebUsecaseFunc(name: 'Alert SM', func: smartHouseAlertStory)
+    ]),
+    yolletWebWidget(name: 'Footer SM', useCases: [
+      yolletWebUsecase(name: 'Footer', widget: smartHouseBNBStory())
+    ]),
+    yolletWebWidget(name: 'Input SM', useCases: [
+      yolletWebUsecase(name: 'Input SM', widget: smartHouseInputStory())
+    ]),
+    yolletWebWidget(name: 'Stacked Container SM', useCases: [
+      yolletWebUsecase(
+          name: 'Stacked Container SM',
+          widget: smartHouseStackedContainerStory())
+    ]),
+    yolletWebWidget(name: 'Header SM', useCases: [
+      yolletWebUsecase(name: 'Header SM', widget: smartHouseHeaderStory())
+    ]),
+    // yolletWebWidget(name: 'Tabs SM', useCases: [
+    //   yolletWebUsecase(
+    //       name: 'Tabs Container SM', widget: smartHouseTabsContainerStory()),
+    //   yolletWebUsecase(name: 'Tabs SM', widget: smartHouseTabsContainerStory()),
+    // ]),
   ]);
 }

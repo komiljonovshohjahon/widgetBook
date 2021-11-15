@@ -1,5 +1,27 @@
 import 'package:widgetbook_2/smart_house_widgets/smarthouse_template/base/template.dart';
 
+Widget smartHouseStackedContainerStory() {
+  return SingleChildScrollView(
+    child: SpacedColumn(
+      verticalSpace: 10,
+      children: [
+        StackedContainerSmall(
+          child: Container(),
+        ),
+        StackedContainerLarge(
+          child: Container(),
+        ),
+        StackedContainerTiny(),
+        StackedContainerSquare(),
+        StackedContainerLargeColor(),
+        StackedContainerBig(
+          child: Container(),
+        ),
+      ],
+    ),
+  );
+}
+
 class StackedContainerSmall extends StatelessWidget {
   Widget child;
 
@@ -11,7 +33,7 @@ class StackedContainerSmall extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ThemeColors.blueGradient_s.withOpacity(0.08),
+              color: ThemeColors.blue.withOpacity(0.08),
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.only(left: 12, right: 12, top: 7),
           width: 300,
@@ -42,7 +64,7 @@ class StackedContainerLarge extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ThemeColors.blueGradient_s.withOpacity(0.08),
+              color: ThemeColors.blue.withOpacity(0.08),
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.only(left: 12, right: 12, top: 3),
           width: 300,
@@ -70,7 +92,7 @@ class StackedContainerTiny extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ThemeColors.blueGradient_s.withOpacity(0.08),
+              color: ThemeColors.blue.withOpacity(0.08),
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.only(left: 13, right: 12, top: 7),
           width: 131,
@@ -96,7 +118,7 @@ class StackedContainerSquare extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ThemeColors.blueGradient_s.withOpacity(0.08),
+              color: ThemeColors.blue.withOpacity(0.08),
               borderRadius: BorderRadius.all(Radius.circular(8))),
           margin: EdgeInsets.only(top: 7),
           width: 220,
@@ -163,7 +185,7 @@ class StackedContainerBig extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ThemeColors.blueGradient_s.withOpacity(0.08),
+              color: ThemeColors.blue.withOpacity(0.08),
               borderRadius: BorderRadius.all(Radius.circular(10))),
           margin: EdgeInsets.only(left: 12, right: 12, top: 3),
           width: 300,

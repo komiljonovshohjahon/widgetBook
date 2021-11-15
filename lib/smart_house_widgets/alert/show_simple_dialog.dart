@@ -17,11 +17,11 @@ showSimpleDialog(BuildContext context,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               NormalButton(
-                text: '버튼1',
+                text: 'Left close',
                 onPressed: onLeftPress,
               ),
               NormalButton(
-                text: '버튼2sdfashdsjah',
+                text: 'Right close',
                 onPressed: onRightPress,
               )
             ],

@@ -16,9 +16,12 @@ class WidgetbookYollet extends StatelessWidget {
       appInfo: AppInfo(
         name: 'Widget Book Yollet',
       ),
-      darkTheme: darkTheme(),
       lightTheme: lightTheme(),
+      darkTheme: darkTheme(),
       devices: const [
+        Apple.iPhoneX,
+        Samsung.s10,
+        Samsung.s21ultra,
         Device(
           name: 'Desktop 1080x720',
           resolution: Resolution(

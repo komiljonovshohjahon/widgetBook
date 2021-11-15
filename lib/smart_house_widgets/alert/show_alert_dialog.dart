@@ -16,9 +16,11 @@ showAlertDialog(BuildContext context,
         children: [
           ExpandedButton(
             text: buttonText ?? '버튼1',
-            onPressed:onPress != null ?  () {
-                onPress();
-            } : null,
+            onPressed: onPress != null
+                ? () {
+                    onPress();
+                  }
+                : null,
           ),
         ],
         title: Text(
@@ -29,5 +31,49 @@ showAlertDialog(BuildContext context,
         ),
       );
     },
+  );
+}
+
+Widget smartHouseAlertStory(BuildContext ctx) {
+  return SpacedColumn(
+    verticalSpace: 10,
+    children: [
+      ExpandedButton(
+        text: 'Show alert dialog',
+        onPressed: () {
+          showAlertDialog(
+            ctx,
+            text: 'Alert Dialog',
+            buttonText: 'Close popup',
+            onPress: () {
+              Navigator.pop(ctx);
+            },
+          );
+        },
+      ),
+      ExpandedButton(
+        text: 'Show body dialog',
+        onPressed: () {
+          showBodyDialog(
+            ctx,
+            color: Theme.of(ctx).backgroundColor,
+            text: 'Body Dialog',
+            onPress: () {
+              Navigator.pop(ctx);
+            },
+          );
+        },
+      ),
+      ExpandedButton(
+        text: 'Show simple dialog',
+        onPressed: () {
+          showSimpleDialog(ctx, text: 'Body Dialog', onLeftPress: () {
+            Navigator.pop(ctx);
+          }, onRightPress: () {
+            Navigator.pop(ctx);
+          });
+        },
+      ),
+    ],
   );
 }

@@ -24,3 +24,41 @@ class ConstructorOfPages extends StatelessWidget {
         showBottomAppBar: false);
   }
 }
+
+Widget smartHouseTabsContainerStory() {
+  return SpacedColumn(
+    children: [
+      ConstructorOfPages(
+        initIndex: 0,
+        viewHeights: [300, 300],
+        tabNames: ["Page 1", "Page 2"],
+        children: [
+          Container(
+            width: 200,
+            height: 300,
+            color: Colors.white,
+            child: Text('Page 1'),
+          ),
+          Container(
+            width: 200,
+            height: 300,
+            color: Colors.white,
+            child: Text('Page 1'),
+          )
+        ],
+      ),
+      // ConstructorOfPages(
+      //   initIndex: 1,
+      //   tabNames: ["Page 2"],
+      //   children: [
+      //     Container(
+      //       width: 200,
+      //       height: 300,
+      //       color: Colors.white,
+      //       child: Text('Page 2'),
+      //     )
+      //   ],
+      // ),
+    ],
+  );
+}

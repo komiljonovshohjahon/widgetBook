@@ -12,3 +12,14 @@ WidgetbookUseCase yolletWebUsecase(
             child: widget,
           ));
 }
+
+//Instance
+WidgetbookUseCase yolletWebUsecaseFunc(
+    {required String name, required Function func}) {
+  return WidgetbookUseCase(
+      name: "$name Instance",
+      builder: (context) => Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: func(context),
+          ));
+}

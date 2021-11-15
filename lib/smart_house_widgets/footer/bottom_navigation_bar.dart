@@ -1,14 +1,17 @@
 import 'package:widgetbook_2/smart_house_widgets/smarthouse_template/base/template.dart';
 
+import 'fab_2.dart';
+
 class BottomNavBar extends StatefulWidget {
   void Function(int)? firstIconFunction;
   void Function(int)? secondIconFunction;
   void Function(int)? thirdIconFunction;
 
-  BottomNavBar(
-      {required this.firstIconFunction,
-      required this.secondIconFunction,
-      required this.thirdIconFunction});
+  BottomNavBar({
+    required this.firstIconFunction,
+    required this.secondIconFunction,
+    required this.thirdIconFunction,
+  });
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -69,4 +72,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
         break;
     }
   }
+}
+
+Widget smartHouseBNBStory() {
+  return Scaffold(
+    body: Container(
+        child: Text('Check bottom navigation bar!'),
+        alignment: Alignment.center),
+    floatingActionButton: Fab2(),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    bottomNavigationBar: BottomNavBar(
+      firstIconFunction: (index) {},
+      secondIconFunction: (index) {},
+      thirdIconFunction: (index) {},
+    ),
+  );
 }

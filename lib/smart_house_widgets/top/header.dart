@@ -81,3 +81,25 @@ class BottomWidgetsNoBack extends StatelessWidget
   @override
   Size get preferredSize => Size(0.0, 0.0);
 }
+
+Widget smartHouseHeaderStory() {
+  return Scaffold(
+    appBar: header(),
+    body: SpacedColumn(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      verticalSpace: 20,
+      children: [
+        Container(
+            width: 300,
+            height: 80,
+            padding: EdgeInsets.only(top: 20),
+            child: header(noBackButton: true)),
+        Container(
+            width: 300,
+            height: 100,
+            child: header(isLarge: true, noBackButton: true)),
+        Container(width: 300, height: 100, child: header(isLarge: true)),
+      ],
+    ),
+  );
+}

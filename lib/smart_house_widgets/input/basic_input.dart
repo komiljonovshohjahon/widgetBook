@@ -46,3 +46,24 @@ class BasicInput extends StatelessWidget {
         ));
   }
 }
+
+Widget smartHouseInputStory() {
+  return SpacedColumn(
+    verticalSpace: 20,
+    children: [
+      BasicInput(),
+      PaymentInput(),
+      InputButton(),
+      InputWithButton(
+        buttonText: 'Enter',
+        onPressed: () {},
+      ),
+      SpacedColumn(
+        children: [
+          InputLabel(label: 'Basic input with label'),
+          BasicInput(),
+        ],
+      )
+    ],
+  );
+}

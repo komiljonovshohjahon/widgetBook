@@ -1,4 +1,3 @@
-
 import 'package:widgetbook_2/smart_house_widgets/smarthouse_template/base/template.dart';
 
 showBodyDialog(
@@ -19,7 +18,7 @@ showBodyDialog(
         children: [
           bodyChildren == null
               ? ExpandedButton(
-                  text: '버튼1',
+                  text: 'Close popup',
                   onPressed: onPress,
                 )
               : SizedBox(),
@@ -40,12 +39,12 @@ showBodyDialog(
                     NormalButton(text: 'Button1'),
                     NormalButton(text: 'Button2')
                   ],
-            )
+            ),
+            SizedBox(height: 16),
           ],
         ),
         contentPadding: EdgeInsets.zero,
-        titlePadding:
-            text != null ? EdgeInsets.only(top: 50) : EdgeInsets.zero,
+        titlePadding: text != null ? EdgeInsets.only(top: 50) : EdgeInsets.zero,
         insetPadding: EdgeInsets.symmetric(horizontal: 25),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
         elevation: 0,
